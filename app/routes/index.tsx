@@ -7,10 +7,12 @@ export default function Index() {
         <div>
             <Hero />
             <div className="flex bg-slate-700 h-screen text-white items-center justify-center">
-                <div className="w-[75%] flex justify-center">
+                <div className="w-[75%] flex justify-center h-screen items-center">
                     <SetupGame />
                 </div>
-                <Leaderboard />
+                <div className="flex h-screen items-center justify-center w-1/4 border-l-2 shadow-md">
+                    <Leaderboard />
+                </div>
             </div>
         </div>
     );
