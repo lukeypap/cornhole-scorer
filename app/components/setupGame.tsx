@@ -1,3 +1,4 @@
+import { redirect } from "@remix-run/node";
 import { useState } from "react";
 import Button from "./button";
 import NewGameForm from "./newGameForm";
@@ -11,7 +12,7 @@ const SetupGame = () => {
     };
 
     return (
-        <div className="space-x-6">
+        <div className="space-x-6 p-10 w-full lg:w-1/2 justify-center flex">
             {gameStarted && gameMode === "" ? (
                 <>
                     <button

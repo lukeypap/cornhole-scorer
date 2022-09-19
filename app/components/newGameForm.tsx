@@ -1,3 +1,4 @@
+import { Form } from "@remix-run/react";
 import Button from "./button";
 
 type props = {
@@ -6,52 +7,55 @@ type props = {
 
 const NewGameForm: React.FC<props> = ({ gameMode }) => {
     return (
-        <div>
-            <form method="POST">
-                <div>
-                    <h1>Team One</h1>
-                    <label htmlFor="playerOne">P1</label>
+        <div className="w-full">
+            <h1 className="text-2xl mb-10 font-bold">Enter the players names...</h1>
+            <Form method="post">
+                <div className="flex flex-col justify-center mb-10">
+                    <h1 className="text-2xl text-center">Team One</h1>
+                    <label htmlFor="t1p1">P1</label>
                     <input
                         type="text"
-                        name="playerOne"
-                        id="playerOne"
-                        className="bg-transparent border-b-4 border-yellow-400"
+                        name="t1p1"
+                        id="t1p1"
+                        className="bg-transparent border-b-2 border-yellow-400"
                     />
                     {gameMode === "doubles" ? (
                         <>
-                            <label htmlFor="playerOne">P2</label>
+                            <label htmlFor="t1p2">P2</label>
                             <input
                                 type="text"
-                                name="playerOne"
-                                id="playerOne"
-                                className="bg-transparent border-b-4 border-yellow-400"
+                                name="t1p2"
+                                id="t1p2"
+                                className="bg-transparent border-b-2 border-yellow-400"
                             />
                         </>
                     ) : null}
                 </div>
-                <div>
-                    <h1>Team Two</h1>
-                    <label htmlFor="playerTwo">P1</label>
+                <div className="flex flex-col justify-center">
+                    <h1 className="text-2xl text-center">Team Two</h1>
+                    <label htmlFor="t2p1">P1</label>
                     <input
                         type="text"
-                        name="playerTwo"
-                        id="playerTwo"
-                        className="bg-transparent border-b-4 border-yellow-400"
+                        name="t2p1"
+                        id="t2p1"
+                        className="bg-transparent border-b-2 border-yellow-400"
                     />
                     {gameMode === "doubles" ? (
                         <>
-                            <label htmlFor="playerOne">P2</label>
+                            <label htmlFor="t2p2">P2</label>
                             <input
                                 type="text"
-                                name="playerOne"
-                                id="playerOne"
-                                className="bg-transparent border-b-4 border-yellow-400"
+                                name="t2p2"
+                                id="t2p2"
+                                className="bg-transparent border-b-2 border-yellow-400"
                             />
                         </>
                     ) : null}
                 </div>
-                <Button>Start Game</Button>
-            </form>
+                <div className="flex justify-center mt-10">
+                    <Button type="submit">Start Game</Button>
+                </div>
+            </Form>
         </div>
     );
 };
